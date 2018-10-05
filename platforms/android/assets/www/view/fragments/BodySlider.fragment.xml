@@ -1,0 +1,64 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+    <Panel id="bodySliderPanel" width="auto" class="sapUiResponsiveMargin" expandable="false" expanded="true">
+        <headerToolbar>
+			<Toolbar>
+                <core:Icon src="sap-icon://bullet-text"/>
+				<Title text="Body Slider"/>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://refresh" press="onBodyResetPress"/>
+                <Switch id="bodySwitch" type="AcceptReject" state="false" enabled="false">
+                    <layoutData>
+                        <FlexItemData growFactor="1" />
+                    </layoutData>
+                </Switch>
+			</Toolbar>
+		</headerToolbar>
+        <content>
+
+            <HBox class="sapUiTinyMargin" justifyContent="SpaceBetween" alignItems="Center" width="auto">
+                <VBox class="sapUiSmallMarginEnd">
+                    <Label text="IP" wrapping="false"/> 
+                </VBox>
+                <VBox>
+                    <Input id="bodySliderIP" value="192.168.1.4" placeholder="i.i.i.i" width="200px" textAlign="Right" liveChange="bodyCheckIP"/>
+                </VBox>
+            </HBox>
+
+            <HBox class="sapUiTinyMargin" justifyContent="SpaceBetween" alignItems="Center" width="auto">
+                <VBox class="sapUiSmallMarginEnd">
+                    <Label text="Steps" wrapping="true"/>
+                </VBox>
+                <VBox>
+                    <StepInput id="bodySliderSteps" value="0" displayValuePrecision="0" min="0" max="13200" step="1" width="200px"/>
+                </VBox>
+            </HBox>
+
+            <HBox class="sapUiTinyMargin" justifyContent="SpaceBetween" alignItems="Center" width="auto">
+                <VBox class="sapUiSmallMarginEnd">
+                    <Label text="Angle" wrapping="true"/>
+                </VBox>
+                <VBox>
+                    <StepInput id="bodySliderAngle" value="0" displayValuePrecision="2" min="-180" max="180" step="10" width="200px"/>
+                </VBox>
+            </HBox>
+
+            <HBox class="sapUiTinyMargin" justifyContent="SpaceBetween" alignItems="Center" width="auto">
+                <VBox class="sapUiSmallMarginEnd">
+                    <Label text="Driver Status" wrapping="true"/>
+                </VBox>
+                <VBox>
+                    <Switch id="bodySliderDriverEnabled" type="AcceptReject" state="true" enabled="true" change="bodyJointDriverSwitchChanged">
+                        <layoutData>
+                            <FlexItemData growFactor="1" />
+                        </layoutData>
+                    </Switch>
+                </VBox>
+            </HBox>            
+
+        </content>
+    </Panel>
+
+</core:FragmentDefinition>
